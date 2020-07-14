@@ -1,0 +1,18 @@
+###服务启动端口号
+server:
+  port: 8080
+
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: io.github.yehongzhi.model
+
+spring:
+  profiles:
+    active: dev
+
+####打印MyBatias日志
+#logging:
+#  level:
+#    ### 开发环境使用DEBUG 生产环境info或者error
+#    com.yehongzhi.strategy.dao: ERROR

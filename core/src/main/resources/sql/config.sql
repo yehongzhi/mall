@@ -1,0 +1,8 @@
+-- 查询外键约束
+SELECT @@FOREIGN_KEY_CHECKS;
+
+-- 禁用外键约束
+SET FOREIGN_KEY_CHECKS=0;
+
+-- 启用外键约束
+SET FOREIGN_KEY_CHECKS=1;
