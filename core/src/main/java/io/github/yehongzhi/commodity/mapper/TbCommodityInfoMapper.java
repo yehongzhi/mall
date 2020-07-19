@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository("tbCommodityInfoMapper")
 public interface TbCommodityInfoMapper extends BaseMapper<TbCommodityInfo> {
 
+    void updateByPK(TbCommodityInfo tbCommodityInfo);
 }

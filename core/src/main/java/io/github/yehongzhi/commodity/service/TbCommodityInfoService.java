@@ -36,4 +36,5 @@ public interface TbCommodityInfoService extends IService<TbCommodityInfo> {
      * @author java技术爱好者
      */
     boolean purchaseCommodityInfo(String commodityId, Integer number) throws Exception;
+
 }
