@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
  * @date 2020-07-13 22:42
  **/
 @Service("commodityInfoService")
-@Transactional(rollbackFor = Exception.class,isolation = Isolation.REPEATABLE_READ)
 public class TbCommodityInfoServiceImpl extends ServiceImpl<TbCommodityInfoMapper, TbCommodityInfo> implements TbCommodityInfoService {
 
     @Resource(name = "tbCommodityInfoMapper")
@@ -35,6 +34,7 @@ public class TbCommodityInfoServiceImpl extends ServiceImpl<TbCommodityInfoMappe
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class, isolation = Isolation.REPEATABLE_READ)
     public boolean insertCommodityInfo(String commodityName,
                                        String commodityPrice,
                                        String description,
@@ -48,6 +48,7 @@ public class TbCommodityInfoServiceImpl extends ServiceImpl<TbCommodityInfoMappe
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class, isolation = Isolation.REPEATABLE_READ)
     public synchronized boolean purchaseCommodityInfo(String commodityId, Integer number) throws Exception {
         //1.先查询数据库中商品的数量
         TbCommodityInfo commodityInfo = commodityInfoMapper.selectById(commodityId);
@@ -67,5 +68,27 @@ public class TbCommodityInfoServiceImpl extends ServiceImpl<TbCommodityInfoMappe
         System.out.println("购买商品[ " + commodityInfo.getCommodityName() + " ]成功,数量为：" + number + ",剩余库存为:" + count);
         return true;
     }
+
+    @Override
+    public boolean purchase(String commodityId, Integer number) throws Exception {
+        boolean bool = false;
+        RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
+        CuratorFramework client = CuratorFrameworkFactory.newClient("127.0.0.1:2181", retryPolicy);
+        // 启动客户端
+        client.start();
+        InterProcessMutex mutex = new InterProcessMutex(client, "/locks");
+        try {
+            if (mutex.acquire(3, TimeUnit.SECONDS)) {
+                bool = this.purchaseCommodityInfo(commodityId, number);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            mutex.release();
+            client.close();
+        }
+        return bool;
+    }
+
 
 }

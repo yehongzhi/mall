@@ -37,4 +37,15 @@ public interface TbCommodityInfoService extends IService<TbCommodityInfo> {
      */
     boolean purchaseCommodityInfo(String commodityId, Integer number) throws Exception;
 
+
+    /**
+     * 购买商品，加分布式锁
+     *
+     * @param commodityId 商品Id
+     * @param number      商品数量
+     * @return boolean
+     * @author Ye hongzhi
+     * @date 2020/7/20
+     */
+    boolean purchase(String commodityId, Integer number) throws Exception;
 }

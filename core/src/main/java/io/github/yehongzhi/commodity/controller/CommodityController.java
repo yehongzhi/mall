@@ -2,11 +2,6 @@ package io.github.yehongzhi.commodity.controller;
 
 import io.github.yehongzhi.commodity.service.TbCommodityInfoService;
 import io.github.yehongzhi.model.TbCommodityInfo;
-import org.apache.curator.RetryPolicy;
-import org.apache.curator.framework.CuratorFramework;
-import org.apache.curator.framework.CuratorFrameworkFactory;
-import org.apache.curator.framework.recipes.locks.InterProcessMutex;
-import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 商品模块Controller层
@@ -70,22 +64,6 @@ public class CommodityController {
     @PostMapping("/purchase")
     public boolean purchaseCommodityInfo(@RequestParam(name = "commodityId") String commodityId,
                                          @RequestParam(name = "number") Integer number) throws Exception {
-        boolean bool = false;
-        RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
-        CuratorFramework client = CuratorFrameworkFactory.newClient("127.0.0.1:2181", retryPolicy);
-        // 启动客户端
-        client.start();
-        InterProcessMutex mutex = new InterProcessMutex(client, "/locks");
-        try {
-            if (mutex.acquire(3, TimeUnit.SECONDS)) {
-                bool = commodityInfoService.purchaseCommodityInfo(commodityId, number);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            mutex.release();
-            client.close();
-        }
-        return bool;
+        return commodityInfoService.purchase(commodityId, number);
     }
 }
