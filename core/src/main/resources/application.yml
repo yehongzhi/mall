@@ -9,7 +9,15 @@ spring:
     port: 5672
     username: guest
     password: guest
-
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true
+###
+# publisher-confirms: true 监听消息是否 到达 exchange
+# publisher-returns: true 监听消息是否 没有到达 queue
+# template.mandatory: true 自动删除不可达消息，默认为false
+###
 logging:
   level:
     com.yehongzhi.strategy.dao: info
