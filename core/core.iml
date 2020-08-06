@@ -125,6 +125,5 @@
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-unix-common:4.1.23.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.0.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.retry:spring-retry:1.2.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:unknown" level="project" />
   </component>
 </module>

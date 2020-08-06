@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: canal
+server:
+  port: 8767
