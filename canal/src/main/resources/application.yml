@@ -1,5 +1,25 @@
 spring:
   application:
     name: canal
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password: 123456
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      # 指定一个默认的组名
+      group-id: consumer-group1
+      #序列化反序列化
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      # 批量抓取
+      batch-size: 65536
+      # 缓存容量
+      buffer-memory: 524288
 server:
   port: 8767
