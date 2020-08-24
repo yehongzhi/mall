@@ -2,6 +2,36 @@ server:
   port: 8081
 
 spring:
+  shardingsphere:
+    datasource:
+      names: master,slave0,slave1
+      master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.0.108:3306/test_db?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT
+        username: yehongzhi
+        password: YHZ@1234
+      slave0:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.0.109:3306/test_db?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT
+        username: yehongzhi
+        password: YHZ@1234
+      slave1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.0.110:3306/test_db?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT
+        username: yehongzhi
+        password: YHZ@1234
+    props:
+      sql.show: true
+    masterslave:
+      load-balance-algorithm-type: round_robin
+    sharding:
+      master-slave-rules:
+        master:
+          master-data-source-name: master
+          slave-data-source-names: slave0,slave1
   profiles:
     active: dev
   rabbitmq:
@@ -18,9 +48,6 @@ spring:
 # publisher-returns: true 监听消息是否 没有到达 queue
 # template.mandatory: true 自动删除不可达消息，默认为false
 ###
-logging:
-  level:
-    com.yehongzhi.strategy.dao: info
 
 mybatis-plus:
   mapper-locations: classpath:mapping/*.xml
