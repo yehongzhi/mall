@@ -1,0 +1,17 @@
+server:
+  port: 8702
+spring:
+  application:
+    name: order
+  cloud:
+    consul:
+      port: 8500
+      host: 127.0.0.1
+      discovery:
+        service-name: order
+        instance-id: ${spring.application.name}:${spring.cloud.consul.host}:${server.port}
+        health-check-path: /actuator/health
+        health-check-interval: 10s
+        prefer-ip-address: true
+        heartbeat:
+          enabled: true

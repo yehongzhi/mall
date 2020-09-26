@@ -9,16 +9,24 @@
         <module name="canal" />
         <module name="common" />
         <module name="core" />
+        <module name="order" />
+        <module name="ordernacos" />
         <module name="rabbitmqconsumer" />
         <module name="springmvc" />
+        <module name="user" />
+        <module name="usernacos" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="canal" target="1.8" />
       <module name="common" target="1.8" />
       <module name="core" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="ordernacos" target="1.8" />
       <module name="rabbitmqconsumer" target="1.8" />
       <module name="springmvc" target="1.8" />
+      <module name="user" target="1.8" />
+      <module name="usernacos" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,8 +34,12 @@
       <module name="canal" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="core" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="ordernacos" options="-parameters" />
       <module name="rabbitmqconsumer" options="-parameters" />
       <module name="springmvc" options="-parameters" />
+      <module name="user" options="-parameters" />
+      <module name="usernacos" options="-parameters" />
     </option>
   </component>
 </project>

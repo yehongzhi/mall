@@ -6,8 +6,12 @@
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mall.iml" filepath="$PROJECT_DIR$/.idea/mall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ordernacos/ordernacos.iml" filepath="$PROJECT_DIR$/ordernacos/ordernacos.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmqconsumer/rabbitmqconsumer.iml" filepath="$PROJECT_DIR$/rabbitmqconsumer/rabbitmqconsumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc/springmvc.iml" filepath="$PROJECT_DIR$/springmvc/springmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usernacos/usernacos.iml" filepath="$PROJECT_DIR$/usernacos/usernacos.iml" />
     </modules>
   </component>
 </project>

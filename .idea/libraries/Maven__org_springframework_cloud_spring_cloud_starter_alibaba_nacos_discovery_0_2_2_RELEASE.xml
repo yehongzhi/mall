@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.cloud:spring-cloud-starter-alibaba-nacos-discovery:0.2.2.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../repo/org/springframework/cloud/spring-cloud-starter-alibaba-nacos-discovery/0.2.2.RELEASE/spring-cloud-starter-alibaba-nacos-discovery-0.2.2.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../repo/org/springframework/cloud/spring-cloud-starter-alibaba-nacos-discovery/0.2.2.RELEASE/spring-cloud-starter-alibaba-nacos-discovery-0.2.2.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../repo/org/springframework/cloud/spring-cloud-starter-alibaba-nacos-discovery/0.2.2.RELEASE/spring-cloud-starter-alibaba-nacos-discovery-0.2.2.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

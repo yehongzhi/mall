@@ -11,6 +11,10 @@
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/canal/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/user/pom.xml" />
+        <option value="$PROJECT_DIR$/order/pom.xml" />
+        <option value="$PROJECT_DIR$/usernacos/pom.xml" />
+        <option value="$PROJECT_DIR$/ordernacos/pom.xml" />
       </list>
     </option>
   </component>
