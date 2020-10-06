@@ -15,6 +15,7 @@
         <module name="springmvc" />
         <module name="user" />
         <module name="usernacos" />
+        <module name="xxljob-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,6 +28,7 @@
       <module name="springmvc" target="1.8" />
       <module name="user" target="1.8" />
       <module name="usernacos" target="1.8" />
+      <module name="xxljob-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -40,6 +42,7 @@
       <module name="springmvc" options="-parameters" />
       <module name="user" options="-parameters" />
       <module name="usernacos" options="-parameters" />
+      <module name="xxljob-demo" options="-parameters" />
     </option>
   </component>
 </project>

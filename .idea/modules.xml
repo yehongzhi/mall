@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/springmvc/springmvc.iml" filepath="$PROJECT_DIR$/springmvc/springmvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
       <module fileurl="file://$PROJECT_DIR$/usernacos/usernacos.iml" filepath="$PROJECT_DIR$/usernacos/usernacos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxljob-demo/xxljob-demo.iml" filepath="$PROJECT_DIR$/xxljob-demo/xxljob-demo.iml" />
     </modules>
   </component>
 </project>
