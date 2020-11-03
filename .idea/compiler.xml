@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="apollo-demo" />
         <module name="canal" />
         <module name="common" />
         <module name="core" />
@@ -19,6 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="apollo-demo" target="1.8" />
       <module name="canal" target="1.8" />
       <module name="common" target="1.8" />
       <module name="core" target="1.8" />
@@ -33,6 +35,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="apollo-demo" options="-parameters" />
       <module name="canal" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="core" options="-parameters" />
