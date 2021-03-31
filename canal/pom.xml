@@ -11,6 +11,7 @@
     <artifactId>canal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>canal</name>
+    <packaging>jar</packaging>
     <description>Demo project for canal</description>
 
     <dependencies>

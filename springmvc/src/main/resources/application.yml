@@ -1,2 +1,12 @@
 server:
   port: 8888
+spring:
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/user?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#整合mybatis
+mybatis:
+  type-aliases-package: io.github.yehongzhi.springmvc.model
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml

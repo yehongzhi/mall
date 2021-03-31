@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="apollo-demo" />
         <module name="canal" />
-        <module name="common" />
         <module name="core" />
+        <module name="mybatisdemo" />
         <module name="order" />
         <module name="ordernacos" />
         <module name="rabbitmqconsumer" />
@@ -24,6 +24,7 @@
       <module name="canal" target="1.8" />
       <module name="common" target="1.8" />
       <module name="core" target="1.8" />
+      <module name="mybatisdemo" target="1.8" />
       <module name="order" target="1.8" />
       <module name="ordernacos" target="1.8" />
       <module name="rabbitmqconsumer" target="1.8" />

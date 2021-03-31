@@ -2,6 +2,10 @@ package io.github.yehongzhi.springmvc.demo;
 
 import io.github.yehongzhi.springmvc.model.Address;
 import io.github.yehongzhi.springmvc.model.User;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.PathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -14,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Map;
 
@@ -127,5 +134,34 @@ public class RequestMappingController {
     public String requestMap(Date date) {
         System.out.println(date);
         return "success";
+    }
+
+    @RequestMapping(value = "/resource", method = RequestMethod.GET)
+    public String resource(@RequestParam(name = "type") String type,
+                           @RequestParam(name = "arg") String arg) throws Exception {
+        Resource resource;
+        //这里可以优化为通过工厂模式，根据type创建Resource的实现类
+        if ("classpath".equals(type)) {
+            //classpath下的资源
+            resource = new ClassPathResource(arg);
+        } else if ("file".equals(type)) {
+            //本地文件系统的资源
+            resource = new PathResource(arg);
+        } else if ("url".equals(type)) {
+            //网络资源
+            resource = new UrlResource(arg);
+        } else {
+            return "fail";
+        }
+        InputStream is = resource.getInputStream();
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        int i;
+        while ((i = is.read()) != -1) {
+            os.write(i);
+        }
+        String result = new String(os.toByteArray(), StandardCharsets.UTF_8);
+        is.close();
+        os.close();
+        return "type:" + type + ",arg:" + arg + "\r\n" + result;
     }
 }

@@ -3,7 +3,13 @@ package io.github.yehongzhi;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * SpringBoot项目启动类
@@ -17,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan("io.github.yehongzhi.*.mapper")
 public class MallApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SpringApplication.run(MallApplication.class, args);
     }
 }

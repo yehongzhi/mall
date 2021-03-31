@@ -1,5 +1,8 @@
 package io.github.yehongzhi.user.user.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import io.github.yehongzhi.user.annotation.LogApi;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +18,7 @@ import java.util.Map;
 @RequestMapping("/mall/user")
 public class UserController {
 
+    @LogApi
     @RequestMapping("/list")
     public Map<String, Object> list() throws Exception {
         Map<String, Object> userMap = new HashMap<>();
@@ -23,5 +27,15 @@ public class UserController {
         userMap.put("3号佳丽", "张敏");
         userMap.put("4号佳丽", "张曼玉");
         return userMap;
+    }
+
+    @LogApi
+    @RequestMapping("/get/{id}")
+    public String get(@PathVariable(name = "id") String id) throws Exception {
+        HashMap<String, Object> user = new HashMap<>();
+        user.put("id", id);
+        user.put("name", "关之琳");
+        user.put("经典角色", "十三姨");
+        return JSONObject.toJSONString(user);
     }
 }
