@@ -1,6 +1,6 @@
 package io.github.yehongzhi.rabbitmqconsumer.demo;
 
-import io.github.yehongzhi.config.RabbitMQConfig;
+import io.github.yehongzhi.rabbitmqconsumer.config.RabbitMQConfig;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

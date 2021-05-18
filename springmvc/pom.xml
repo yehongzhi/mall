@@ -52,11 +52,6 @@
             <artifactId>jstl</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.58</version>
-        </dependency>
-        <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-annotation-aspectj</artifactId>
             <version>1.8.1</version>
@@ -71,11 +66,50 @@
             <artifactId>sentinel-web-servlet</artifactId>
             <version>1.8.1</version>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-extension</artifactId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
             <version>1.8.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.75</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>com.alibaba.csp</groupId>-->
+        <!--<artifactId>sentinel-datasource-nacos</artifactId>-->
+        <!--<version>1.8.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.alibaba.nacos</groupId>-->
+        <!--<artifactId>nacos-client</artifactId>-->
+        <!--<version>1.3.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.alibaba.nacos</groupId>-->
+        <!--<artifactId>nacos-api</artifactId>-->
+        <!--<version>1.3.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.alibaba.nacos</groupId>-->
+        <!--<artifactId>nacos-common</artifactId>-->
+        <!--<version>1.3.0</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>

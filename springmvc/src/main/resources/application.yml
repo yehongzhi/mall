@@ -1,11 +1,26 @@
 server:
   port: 8888
 spring:
+  cloud:
+    sentinel:
+      datasource:
+        flow:
+          nacos:
+            server-addr: localhost:8848
+            namespace: 05f447bc-8a0b-4686-9c34-344d7206ea94
+            dataId: springmvc-sentinel-flow-rules
+            groupId: SENTINEL_GROUP
+            # 规则类型，取值见：
+            # org.springframework.cloud.alibaba.sentinel.datasource.RuleType
+            rule-type: flow
+            data-type: json
   datasource:
     username: root
     password:
     url: jdbc:mysql://localhost:3306/user?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: springmvc-sentinel-flow-rules
 #整合mybatis
 mybatis:
   type-aliases-package: io.github.yehongzhi.springmvc.model

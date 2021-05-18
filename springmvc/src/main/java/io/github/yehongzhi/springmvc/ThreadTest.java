@@ -14,26 +14,11 @@ import java.util.concurrent.TimeUnit;
  **/
 public class ThreadTest {
 
-    private static ExecutorService executor;
-
-    static {
-        executor = new ThreadPoolExecutor(2, Runtime.getRuntime().availableProcessors() + 1, 3, TimeUnit.SECONDS, new LinkedBlockingDeque<>(3));
-    }
-    private static Object monitor = new Object();
-
     public static void main(String[] args) throws Exception {
-        synchronized (monitor){
-
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < 10; i++) {
+            s.append(i);
         }
-    }
-
-    //修饰一个方法
-    public synchronized void doSome(){
-
-    }
-
-    //修饰一个方法
-    public synchronized static void add(){
-
+        System.out.println(s.toString());
     }
 }
